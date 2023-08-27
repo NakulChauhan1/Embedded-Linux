@@ -1,0 +1,1 @@
+cmd_/home/nakul/cpsrc/Nakul_workspace_LDD/hello_world.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/nakul/cpsrc/Nakul_workspace_LDD/hello_world.ko /home/nakul/cpsrc/Nakul_workspace_LDD/hello_world.o /home/nakul/cpsrc/Nakul_workspace_LDD/hello_world.mod.o;  true
