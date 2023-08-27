@@ -1,1 +1,0 @@
-cmd_/home/nakul/cpsrc/Nakul_workspace_LDD/Module.symvers := sed 's/\.ko$$/\.o/' /home/nakul/cpsrc/Nakul_workspace_LDD/modules.order | scripts/mod/modpost -m -a  -o /home/nakul/cpsrc/Nakul_workspace_LDD/Module.symvers -e -i Module.symvers   -T -
