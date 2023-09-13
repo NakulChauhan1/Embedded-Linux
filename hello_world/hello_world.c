@@ -10,6 +10,40 @@ static unsigned int count = 3;
 static struct class *cls = NULL;
 static struct device *d = NULL;
 
+static int driver_open (struct inode *in, struct file *f)
+{
+    printk("Hello World: Device file opened \n");
+    return 1;
+}
+
+static ssize_t driver_read (struct file *f, char __user *data, size_t size, loff_t *)
+{
+    printk("Hello World: Device file read \n");
+    return 1;
+}
+
+static ssize_t driver_write (struct file *, const char __user *data, size_t size, loff_t *)
+{
+    printk("Hello World: Device file written \n");
+    return 1;
+}
+
+/*
+static int driver_ioctl (struct file *, unsigned int, unsigned long)
+{
+    printk("Hello World: Device file sent small data (ioctl) \n");
+}
+*/
+
+static const struct file_operations fops = 
+{                              \
+    .owner      = THIS_MODULE,                                         \
+    .open       = &driver_open,                                        \
+    .read       = &driver_read,                                        \
+    .write      = &driver_write,       \
+};
+
+
 static int __init hello_world_init(void)
 {
     unsigned int baseminor = 0;
